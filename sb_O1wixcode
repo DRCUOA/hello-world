@@ -1,0 +1,124 @@
+// Code to run on page load
+
+// Import statement go at the top of your code, outside of onReady()
+import wixWindow from 'wix-window';
+
+// Code you want to run when the page loads
+$w.onReady(function () {
+  console.log(`Device viewing site is: ${wixWindow.formFactor}`);
+
+//Show landing message to point user to choose a product
+  $w("#onReadyLandingMsg").show();
+
+    // hide all other gen elements
+      $w("#genProdSelectPageID1").hide();
+      $w("#containerboxAllProducts").hide();
+      $w("#displaybuttondatasheettext").hide();
+      $w("#templatedatasheet").hide();
+})
+
+/**
+*	Adds an event handler that runs when an input element's value
+ is changed.
+*	 @param {$w.Event} event
+*/
+
+export function prodChoice1_change(event) {
+	 if ($w("#prodChoice1").value === "None") { 
+                    console.log("No product picked")} 
+                else {if ($w("#prodChoice1").value === "Badge") 
+
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+                    {
+                    $w("#genProdSelectPageID1").show();
+                    $w("#containerboxAllProducts").show();
+                    $w("#displaybuttondatasheettext").show();
+                    {$w("#templatedatasheet").show();
+                    console.log("user picked badge"); }   }
+
+                else {if ($w("#prodChoice1").value === "Room Backing Plate") 
+
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+
+                    console.log("user picked plate")                   
+                else {if($w("#prodChoice1").value === "Room Name Slider") 
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+            
+                    console.log("user picked slider");    
+                else {if($w("#prodChoice1").value === "Wall Signs")
+
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+
+                    console.log("user picked wall signs")    
+                else {if($w("#prodChoice1").value === "Custom Signage")
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+ 
+                    console.log("user picked custom signage")
+                    
+}
+}
+}
+}
+}
+}
+            
+/**
+*	Adds an event handler that runs when an input element's value
+ is changed.
+*	 @param {$w.Event} event
+*
+
+$w.onReady  (function showHideProductSpecfics() 
+            {
+            
+            /** 
+             * hide generic elements needed for product pages until use makes a choice 
+             * 
+            
+                    
+                    $w("#genProdDispBorder").hide();
+                    $w("#genProdSelectPageID1").hide();
+                    $w("#genProdDispBorder").hide();
+                    $w("#genProdSelectPageID1").hide();
+                    } */
+            
+
+/**
+* Product Selection Choices:
+*          
+* " None "
+* " Badge "
+* " Room Backing Plate "
+* " Room Name Slider "
+* " Wall Signs "
+* " Custom Signage "
+*
+*	Adds an event handler that runs when an input element's value is changed.
+*	 @param {$w.Event} event
+*/
