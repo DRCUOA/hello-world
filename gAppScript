@@ -1,0 +1,50 @@
+/**
+.....................................................................................
+.                                                                                   .
+.GoogleAppScript_generateResponseID and send email to trigger PowerAutomate Process .
+. trigger on new line data fed from Ascend.wix Form submission                      .
+*/
+
+var responseID;
+
+function generateResponseID() {
+
+  /** find current count of FormID 'comp-kqiwusyj' as shown in the reference data sheet */
+  
+  var id_Ss = SpreadsheetApp.getActiveSpreadsheet();
+  var id_RefSheet = id_Ss.getSheetByName("gs_ReferenceData");
+  var id_RefRange = id_RefSheet.getRange(1,1,1,1);
+  
+  /** use the id_RefRange from above to find the last row number in the range  */
+  
+  var id_Sheet = id_Ss.getSheetByName("dataLog");
+        
+        /** define the key range */
+
+            var id_RangeForIDs = id_Sheet.getRange(2,1,(id_RefRange.getValue()),19);
+
+                var id_respID_A = id_RangeForIDs.getCell((id_RefRange.getValue()),1);
+                var id_respID_B = id_RangeForIDs.getCell((id_RefRange.getValue()),2);
+                var iD =  (id_respID_A.getValue()) + (id_respID_B.getValue())
+                      
+        /** define cell to udpate from id_RangeForIDs range */
+        
+                var cellRef_ForUpdate = id_RangeForIDs.getCell((id_RefRange.getValue()),19);
+  
+        /** Generate the submission O1_USID reference, note the constant prefex string is used by the power automate flow to differentiate a flow trigger email 
+         *   from other incoming email to the monitored outlook folder */
+ 
+  var responseID = "O1_USID: "+ ((id_respID_A.getValue()).getDay() + (id_respID_A.getValue()).getMonth() + (id_respID_A.getValue()).getYear() + (id_respID_B.getValue()).getDay() +  (id_respID_B.getValue()).getMonth() + (id_respID_B.getValue()).getYear())*((Math.random()*24563.89)/1256);
+
+        /** Write back the generated O1_USID reference to the O1gs and send the email with it to iniitate the power automate flow 
+         * and log the unique submission key */
+
+      cellRef_ForUpdate.setValue(responseID);
+
+          MailApp.sendEmail({
+          to: "accounts@crownbadges.co.nz",
+          subject: responseID,
+          body: iD,
+                            });
+
+};
