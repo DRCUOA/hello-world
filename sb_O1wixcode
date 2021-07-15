@@ -1,46 +1,46 @@
-// Code to run on page load
+// Import statements - keep outside of onReady()
+    import wixWindow from 'wix-window';
+// onReady to run on page load, show device
+    $w.onReady(function () 
+    {
+    console.log(`Device viewing site is: ${wixWindow.formFactor}`);
+  // set progress bar to target and initial value
+        $w('#orderFormProgressBar').targetValue = 130;
+        $w('#orderFormProgressBar').value = 0;
+          //Show landing message to point user to choose a product
 
-// Import statement go at the top of your code, outside of onReady()
-import wixWindow from 'wix-window';
+            // config element initial elements view
+                $w("#displaybuttondatasheettext").hide();
+                $w("#templatedatasheet").hide();
+    })
 
-// Code you want to run when the page loads
-$w.onReady(function () {
-  console.log(`Device viewing site is: ${wixWindow.formFactor}`);
-
-//Show landing message to point user to choose a product
-  $w("#onReadyLandingMsg").show();
-
-    // hide all other gen elements
-      $w("#genProdSelectPageID1").hide();
-      $w("#containerboxAllProducts").hide();
-      $w("#displaybuttondatasheettext").hide();
-      $w("#templatedatasheet").hide();
-})
-
-/**
-*	Adds an event handler that runs when an input element's value
- is changed.
+/** event_Handler
+*	Runs when the input element's value is changed.
 *	 @param {$w.Event} event
 */
-
 export function prodChoice1_change(event) {
 	 if ($w("#prodChoice1").value === "None") { 
                     console.log("No product picked")} 
                 else {if ($w("#prodChoice1").value === "Badge") 
-
-                    /**
-                    *	PLACEHOLDER 
+                    /** placehodler copy and pasting show and hide code 
+                    *
                     *	 $w("#[productSpecificelements]").show();
                     *    $w("#[productSpecificelements]").hide(); 
                     */
                     {
-                    $w("#genProdSelectPageID1").show();
-                    $w("#containerboxAllProducts").show();
+                    //show the generic elements required and the specific container box for this product  
+                    
                     $w("#displaybuttondatasheettext").show();
-                    {$w("#templatedatasheet").show();
-                    console.log("user picked badge"); }   }
+                    $w("#templatedatasheet").show();
+                    console.log("user picked badge");    
+                  
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
 
-                else {if ($w("#prodChoice1").value === "Room Backing Plate") 
+                else {if ($w("#prodChoice1").value === "Room Backing Plate")  
 
                     /**
                     *	PLACEHOLDER 
@@ -48,8 +48,17 @@ export function prodChoice1_change(event) {
                     *    $w("#[productSpecificelements]").hide(); 
                     */
 
+                    {                       
+                    $w("#containerboxNfeBackingPlates").show();
+                    // will need to nest below statement further for backingplateSubtypeOptionSelector when
+                    // multiple images are available, for now just used as the generic image for backing plate
+                    
+                    $w("#backingplateDisplayImgSingleSquareCrns").show();
+                    console.log("user picked plate")  
 
-                    console.log("user picked plate")                   
+                    //hide the product containter boxes not required for this product selection
+                    
+                    }               
                 else {if($w("#prodChoice1").value === "Room Name Slider") 
                 
                     /**
@@ -57,8 +66,16 @@ export function prodChoice1_change(event) {
                     *	 $w("#[productSpecificelements]").show();
                     *    $w("#[productSpecificelements]").hide(); 
                     */
-            
-                    console.log("user picked slider");    
+                    {
+                    console.log("user picked slider");   
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    
+                    }
+
                 else {if($w("#prodChoice1").value === "Wall Signs")
 
                 
@@ -68,8 +85,15 @@ export function prodChoice1_change(event) {
                     *    $w("#[productSpecificelements]").hide(); 
                     */
 
+                    {                   
+                    console.log("user picked wall signs")
 
-                    console.log("user picked wall signs")    
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
+
                 else {if($w("#prodChoice1").value === "Custom Signage")
                 
                     /**
@@ -78,8 +102,14 @@ export function prodChoice1_change(event) {
                     *    $w("#[productSpecificelements]").hide(); 
                     */
 
- 
+                    { 
                     console.log("user picked custom signage")
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }                   
                     
 }
 }
@@ -87,12 +117,26 @@ export function prodChoice1_change(event) {
 }
 }
 }
-            
+
+/** event_Handler
+ *	Runs when element is clicked.
+ *	 @param {$w.MouseEvent} event
+ */
+export function continuetoFormPage2_click(event) {
+	// increment progress on for continuation 
+  $w('#orderFormProgressBar').targetValue = 130;
+  $w('#orderFormProgressBar').value =  $w('#orderFormProgressBar').value + 10;
+ let progressvalue = $w('#orderFormProgressBar').value
+ console.log(progressvalue+" is the current progress bar value")
+}
+
+
 /**
 *	Adds an event handler that runs when an input element's value
  is changed.
 *	 @param {$w.Event} event
 *
+
 
 $w.onReady  (function showHideProductSpecfics() 
             {
@@ -118,7 +162,4 @@ $w.onReady  (function showHideProductSpecfics()
 * " Room Name Slider "
 * " Wall Signs "
 * " Custom Signage "
-*
-*	Adds an event handler that runs when an input element's value is changed.
-*	 @param {$w.Event} event
 */
