@@ -14,7 +14,20 @@
                 $w("#templatedatasheet").hide();
     })
 
-/** event_Handler - Product Line 1 
+
+/** Code currently in: PROD **********************************************************************   
+*	
+*
+*
+*           Object : prodChoice1 
+*         Current Location:  https://github.com/DRCUOA/hello-world.git (PL - Space 1)
+*         Cut 16-7-2021 3.07pm BY DRCUOA  Cutback 3.38pm 
+*
+*
+*
+
+*/
+/** event_Handler - Product Line 1
 *	Runs when the input element's value is changed.
 *   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
 *   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
@@ -22,6 +35,7 @@
 *  
 *	 @param {$w.Event} event
 */
+
 export function prodChoice1_change(event) {
 	 if ($w("#prodChoice1").value === "None") 
                     /** configure user view state when product choice selection 
@@ -130,56 +144,8 @@ export function prodChoice1_change(event) {
 }
 }
 
-/** event_Handler
- *	Runs when element is clicked.
-  *	 @param {$w.MouseEvent} event
- */
-export function continuetoFormPage2_click(event) {
-	// increment progress on for continuation 
-  $w('#orderFormProgressBar').targetValue = 130;
-  $w('#orderFormProgressBar').value =  $w('#orderFormProgressBar').value + 10;
- let progressvalue = $w('#orderFormProgressBar').value
- console.log(progressvalue+" is the current progress bar value")
-}
-
-
-/**
-*	Adds an event handler that runs when an input element's value
- is changed.
-*	 @param {$w.Event} event
-*
-
-
-$w.onReady  (function showHideProductSpecfics() 
-            {
-            
-            /** 
-             * hide generic elements needed for product pages until use makes a choice 
-             * 
-            
-                    
-                    $w("#genProdDispBorder").hide();
-                    $w("#genProdSelectPageID1").hide();
-                    $w("#genProdDispBorder").hide();
-                    $w("#genProdSelectPageID1").hide();
-                    } */
-            
-
-/**
-* Product Selection Choices:
-*          
-* " None "
-* " Badge "
-* " Room Backing Plate "
-* " Room Name Slider "
-* " Wall Signs "
-* " Custom Signage "
-*/
-/** event_Handler - Product Line 1 - BADGES
-*	Runs when the input element's value is changed.
-*   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
-*   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
-*                          Deployed FROM TEMPLATE V1  
+/** event_Handler - ProductChoice2 - BADGES
+*        Built V0.1 - Deployed FROM TEMPLATE V1  
 *	 @param {$w.Event} event
 */
 export function prodChoice2_change(event) {
@@ -206,6 +172,7 @@ export function prodChoice2_change(event) {
                     
                     $w("#displaybuttondatasheettext").show();
                     $w("#templatedatasheet").show();
+                    $w("#containerboxNfeBadges").show();
                     console.log("Event: change #prodChoice2 - View state is: badge");    
                   
                     //hide the product containter boxes not required for this product selection
