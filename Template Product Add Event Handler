@@ -1,13 +1,22 @@
-/** event_Handler - Product Line 1 
+/** event_Handler - Product Line 
+*
+*       THIS IS A CLASS FUNCTION TEMPLATE
+*       event_handlerOnChange(prodChoice_n)
+*
+*   Use prodChoic & n for n 1-10   (Use ' _n  ' in edit and replace with element number to pass into the function)
+*   Refer to and cut and past from current element documentation whereever possible. 
+*   n is the reference to the appropriate element on the form for product selection on each product add page
+*
 *	Runs when the input element's value is changed.
 *   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
-*   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
-*  THIS FIRST INSTANCE IS THE BASE ONE - MAKE CHANGES TO THIS AS A TEMPLATE COPY, CHANGING ON THIS COMMENT LINE
+*   
+*  
+*                          THIS AS A TEMPLATE COPY V1 - KEEP THE Version number on ON DEPLOY    
 *  
 *	 @param {$w.Event} event
 */
-export function prodChoice2_change(event) {
-	 if ($w("#prodChoice2").value === "None") 
+export function prodChoice_n_change(event) {
+	 if ($w("#prodChoice_n").value === "None") 
                     /** configure user view state when product choice selection 
                     *  value is none .  Is this also the default state?
                     *	 $w("#[productSpecificelements]").show();
@@ -16,27 +25,23 @@ export function prodChoice2_change(event) {
         
                     { 
                     //    $w("#").show([ SHOW HELP TEXT MESSAGE AND/OR TRY TO FIGURE OUT WAY ROUND FORM NAV LIMITATIONS SO USER CAN JUMP TO SUBMIT]);
-                    console.log("No product picked - view state is NONE")} 
-                else {if ($w("#prodChoice2").value === "Badge") 
-                    /** placehodler copy and pasting show and hide code 
-                    *
-                    *	 $w("#[productSpecificelements]").show();
-                    *    $w("#[productSpecificelements]").hide(); 
-                    */
+                   console.log("Event: change #prodChoice_n: Choice set to {[productname]})
+                else {if ($w("#prodChoice_n").value === "Badge") 
+                   
                     {
                     //show the generic elements required and the specific container box for this product  
                     
-                    $w("#displaybuttondatasheettext").show();
-                    $w("#templatedatasheet").show();
-                    console.log("User changes product selection - View state is: badge");    
+                    // Add as required:  $w("#").show();
+                    // Add as required:  $w("#").hide();
+                    console.log("Event: change #prodChoice_n: Choice set to {[productname]})
                   
-                    //hide the product containter boxes not required for this product selection
-                    //backingplates:
+                    // hide the product containter boxes not required for this product selection
+                    
                     $w("#backingplateDisplayImgSingleSquareCrns").hide();
                     $w("#containerboxNfeBackingPlates").hide();
                     }
 
-                else {if ($w("#prodChoice2").value === "Room Backing Plate")  
+                else {if ($w("#prodChoice_n").value === "Room Backing Plate")  
 
                     /**
                     *	PLACEHOLDER 
@@ -50,12 +55,12 @@ export function prodChoice2_change(event) {
                     // multiple images are available, for now just used as the generic image for backing plate
                     
                     $w("#backingplateDisplayImgSingleSquareCrns").show();
-                    console.log("User changes product selection - View state is: room backing plate")  
+                    console.log("Event: change #prodChoice_n: Choice set to {[productname]})
 
                     //hide the product containter boxes not required for this product selection
                     
                     }               
-                else {if($w("#prodChoice2").value === "Room Name Slider") 
+                else {if($w("#prodChoice_n").value === "Room Name Slider") 
                 
                     /**
                     *	PLACEHOLDER 
@@ -63,7 +68,7 @@ export function prodChoice2_change(event) {
                     *    $w("#[productSpecificelements]").hide(); 
                     */
                     {
-                    console.log("User changes product selection - View state is: name slider");   
+                    console.log("Event: change #prodChoice_n: Choice set to {[productname]})
 
                     //hide the product containter boxes not required for this product selection
                     //backingplates:
@@ -72,7 +77,7 @@ export function prodChoice2_change(event) {
                     
                     }
 
-                else {if($w("#prodChoice2").value === "Wall Signs")
+                else {if($w("#prodChoice_n").value === "Wall Signs")
 
                 
                     /**
@@ -90,7 +95,7 @@ export function prodChoice2_change(event) {
                     $w("#containerboxNfeBackingPlates").hide();
                     }
 
-                else {if($w("#prodChoice2").value === "Custom Signage")
+                else {if($w("#prodChoice_n").value === "Custom Signage")
                 
                     /**
                     *	PLACEHOLDER 
