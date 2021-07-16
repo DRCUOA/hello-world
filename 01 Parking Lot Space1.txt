@@ -6,11 +6,20 @@
 *   Status then         : Stable running
 *   Comment:    This draft 0.1 stable code for prodChoice1 - *               backingplates    
 *
-*       !!!!!!!! NO CHANGES ALLOWED TO CODE IN PARK !!!!!
-*
+*    !!!!!!!! NO CHANGES ALLOWED TO CODE IN PARK !!!!!!!
+*    EVERYTHING OUTSIDE THIS COMMENT BOX IS CODE IN PARK
 */
 
-wix rub
+
+
+/** event_Handler - Product Line 1
+*	Runs when the input element's value is changed.
+*   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
+*   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
+*  THIS FIRST INSTANCE IS THE BASE ONE - MAKE CHANGES TO THIS AS A TEMPLATE COPY, CHANGING ON THIS COMMENT LINE
+*  
+*	 @param {$w.Event} event
+*/
 
 export function prodChoice1_change(event) {
 	 if ($w("#prodChoice1").value === "None") 
