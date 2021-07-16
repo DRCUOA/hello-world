@@ -1,0 +1,121 @@
+/** ::: PARKING LOT - SPACE 1 :::
+*
+*   Built V0.1          : prodChoice1_change(event) 
+*   Type                : event_Handler - Product Line 
+*   Cut from PROD on    : 16.07.21  3:07pm
+*   Status then         : Stable running
+*   Comment:    This draft 0.1 stable code for prodChoice1 - *               backingplates    
+*/
+
+wix rub
+
+export function prodChoice1_change(event) {
+	 if ($w("#prodChoice1").value === "None") 
+                    /** configure user view state when product choice selection 
+                    *  value is none .  Is this also the default state?
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+        
+                    { 
+                    //    $w("#").show([ SHOW HELP TEXT MESSAGE AND/OR TRY TO FIGURE OUT WAY ROUND FORM NAV LIMITATIONS SO USER CAN JUMP TO SUBMIT]);
+                    console.log("No product picked - view state is NONE")} 
+                else {if ($w("#prodChoice1").value === "Badge") 
+                    /** placehodler copy and pasting show and hide code 
+                    *
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+                    {
+                    //show the generic elements required and the specific container box for this product  
+                    
+                    $w("#displaybuttondatasheettext").show();
+                    $w("#templatedatasheet").show();
+                    console.log("Event: change #prodChoice1: Choice is badge");    
+                  
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
+
+                else {if ($w("#prodChoice1").value === "Room Backing Plate")  
+
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    {                       
+                    $w("#containerboxNfeBackingPlates").show();
+                    // will need to nest below statement further for backingplateSubtypeOptionSelector when
+                    // multiple images are available, for now just used as the generic image for backing plate
+                    
+                    $w("#backingplateDisplayImgSingleSquareCrns").show();
+                    console.log("Event: change #prodChoice1: Choice set to Room Backing Plate")  
+
+                    //hide the product containter boxes not required for this product selection
+                    
+                    }               
+                else {if($w("#prodChoice1").value === "Room Name Slider") 
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+                    {
+                    console.log("Event: change #prodChoice1: Choice set to name slider");   
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    
+                    }
+
+                else {if($w("#prodChoice1").value === "Wall Signs")
+
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    {                   
+                    console.log("Event: change #prodChoice1: Choice set to Wall Signs")
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
+
+                else {if($w("#prodChoice1").value === "Custom Signage")
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    { 
+                    console.log("Event: change #prodChoice1: Choice set to custom Signage")
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }                   
+                    
+}
+}
+}
+}
+}
+}
+
+
+
