@@ -14,13 +14,25 @@
                 $w("#templatedatasheet").hide();
     })
 
-/** event_Handler
+/** event_Handler - Product Line 1 
 *	Runs when the input element's value is changed.
+*   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
+*   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
+*  THIS FIRST INSTANCE IS THE BASE ONE - MAKE CHANGES TO THIS AS A TEMPLATE COPY, CHANGING ON THIS COMMENT LINE
+*  
 *	 @param {$w.Event} event
 */
 export function prodChoice1_change(event) {
-	 if ($w("#prodChoice1").value === "None") { 
-                    console.log("No product picked")} 
+	 if ($w("#prodChoice1").value === "None") 
+                    /** configure user view state when product choice selection 
+                    *  value is none .  Is this also the default state?
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+        
+                    { 
+                    //    $w("#").show([ SHOW HELP TEXT MESSAGE AND/OR TRY TO FIGURE OUT WAY ROUND FORM NAV LIMITATIONS SO USER CAN JUMP TO SUBMIT]);
+                    console.log("No product picked - view state is NONE")} 
                 else {if ($w("#prodChoice1").value === "Badge") 
                     /** placehodler copy and pasting show and hide code 
                     *
@@ -32,7 +44,7 @@ export function prodChoice1_change(event) {
                     
                     $w("#displaybuttondatasheettext").show();
                     $w("#templatedatasheet").show();
-                    console.log("user picked badge");    
+                    console.log("Event: change #prodChoice1: Choice is badge");    
                   
                     //hide the product containter boxes not required for this product selection
                     //backingplates:
@@ -54,7 +66,7 @@ export function prodChoice1_change(event) {
                     // multiple images are available, for now just used as the generic image for backing plate
                     
                     $w("#backingplateDisplayImgSingleSquareCrns").show();
-                    console.log("user picked plate")  
+                    console.log("Event: change #prodChoice1: Choice set to Room Backing Plate")  
 
                     //hide the product containter boxes not required for this product selection
                     
@@ -67,7 +79,7 @@ export function prodChoice1_change(event) {
                     *    $w("#[productSpecificelements]").hide(); 
                     */
                     {
-                    console.log("user picked slider");   
+                    console.log("Event: change #prodChoice1: Choice set to name slider");   
 
                     //hide the product containter boxes not required for this product selection
                     //backingplates:
@@ -86,7 +98,7 @@ export function prodChoice1_change(event) {
                     */
 
                     {                   
-                    console.log("user picked wall signs")
+                    console.log("Event: change #prodChoice1: Choice set to Wall Signs")
 
                     //hide the product containter boxes not required for this product selection
                     //backingplates:
@@ -103,7 +115,7 @@ export function prodChoice1_change(event) {
                     */
 
                     { 
-                    console.log("user picked custom signage")
+                    console.log("Event: change #prodChoice1: Choice set to custom Signage")
 
                     //hide the product containter boxes not required for this product selection
                     //backingplates:
@@ -120,7 +132,7 @@ export function prodChoice1_change(event) {
 
 /** event_Handler
  *	Runs when element is clicked.
- *	 @param {$w.MouseEvent} event
+  *	 @param {$w.MouseEvent} event
  */
 export function continuetoFormPage2_click(event) {
 	// increment progress on for continuation 
@@ -163,3 +175,119 @@ $w.onReady  (function showHideProductSpecfics()
 * " Wall Signs "
 * " Custom Signage "
 */
+/** event_Handler - Product Line 1 - BADGES
+*	Runs when the input element's value is changed.
+*   Needs to repeat on each form step (each form step is effoectivly an order line on submission)
+*   key field is prodChoice[n] (where n is 1 to 10, one for each virtual order line)
+*                          Deployed FROM TEMPLATE V1  
+*	 @param {$w.Event} event
+*/
+export function prodChoice2_change(event) {
+	// This function was added from the Properties & Events panel. To learn more, visit http://wix.to/UcBnC-4
+	// Add your code for this event here: 
+     if ($w("#prodChoice2").value === "None") 
+                    /** configure user view state when product choice selection 
+                    *  value is none .  Is this also the default state?
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+        
+                    { 
+                    //    $w("#").show([ SHOW HELP TEXT MESSAGE AND/OR TRY TO FIGURE OUT WAY ROUND FORM NAV LIMITATIONS SO USER CAN JUMP TO SUBMIT]);
+                    console.log("Event: change #prodChoice2 - View state is: NONE")} 
+                else {if ($w("#prodChoice2").value === "Badge") 
+                    /** placehodler copy and pasting show and hide code 
+                    *
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+                    {
+                    //show the generic elements required and the specific container box for this product  
+                    
+                    $w("#displaybuttondatasheettext").show();
+                    $w("#templatedatasheet").show();
+                    console.log("Event: change #prodChoice2 - View state is: badge");    
+                  
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
+
+                else {if ($w("#prodChoice2").value === "Room Backing Plate")  
+
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    {                       
+                    $w("#containerboxNfeBackingPlates").show();
+                    // will need to nest below statement further for backingplateSubtypeOptionSelector when
+                    // multiple images are available, for now just used as the generic image for backing plate
+                    
+                    $w("#backingplateDisplayImgSingleSquareCrns").show();
+                    console.log("Event: change #prodChoice2 - View state is: room backing plate")  
+
+                    //hide the product containter boxes not required for this product selection
+                    
+                    }               
+                else {if($w("#prodChoice2").value === "Room Name Slider") 
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+                    {
+                    console.log("User changes product selection on Prod Choice 2 - View state is: name slider");   
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    
+                    }
+
+                else {if($w("#prodChoice2").value === "Wall Signs")
+
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    {                   
+                    console.log("Event: change #prodChoice2 - View state is:  wall signs")
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }
+
+                else {if($w("#prodChoice2").value === "Custom Signage")
+                
+                    /**
+                    *	PLACEHOLDER 
+                    *	 $w("#[productSpecificelements]").show();
+                    *    $w("#[productSpecificelements]").hide(); 
+                    */
+
+                    { 
+                    console.log("Event: change #prodChoice2 - View state is:   custom signage")
+
+                    //hide the product containter boxes not required for this product selection
+                    //backingplates:
+                    $w("#backingplateDisplayImgSingleSquareCrns").hide();
+                    $w("#containerboxNfeBackingPlates").hide();
+                    }                   
+                    
+}
+}
+}
+}
+}
+}
