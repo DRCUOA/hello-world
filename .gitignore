@@ -1,0 +1,36 @@
+# Ignore npm packages
+node_modules/
+
+# Ignore compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+
+# Ignore dependency directories
+vendor/
+
+# Ignore environment variables
+.env
+
+# Ignore logs
+*.log
+
+# Ignore build files
+build/
+
+# Ignore test files
+test/
+
+# Ignore package-lock.json
+package-lock.json
+
+# Ignore webpack configuration files
+webpack.config.js
+
+# Ignore other configuration files
+.eslintrc
+.stylelintrc
+
+# Ignore tests
+__tests__/
